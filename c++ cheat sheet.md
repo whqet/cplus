@@ -68,7 +68,7 @@ cout<<a;
 cout<<"结果是："<<a<<endl;
 ```
 
-## 3. 数据类型![type](C:\Users\Administrator\Desktop\c++\type.png)
+## 3. 数据类型
 
 | 类型     | 关键字  |
 | :------- | :------ |
@@ -270,7 +270,7 @@ scanf("%d%c",&a,&b);
 
   - 在使用 scanf 之前最好使用 printf 提示输入
 
-### 5.2 `printf`使用
+### 5.2 `printf`使用:star:
 
 ```c++
 /*
@@ -345,13 +345,171 @@ printf("%05d\n",100);               //加0，位数不足时补零
 |%x |十六进制数(0x00000)|
 |%s |字符串|
 
-## 6 if语句
+## 6 判断
 
-
-
-## 7 switch语句
+### 6.1 if语句 :star:
 
 ```c++
+//if语句
+//如果执行的操作只有一句，则
+if(条件判断) 操作;
+//一般情况下，需要执行的语句换行，tab缩进比较美观。
+if(条件判断)
+    操作;
+//如果包括多个语句，需要加上大括号
+if(条件判断){
+    多个语句;
+}
+```
+
+```flow
+b=>start: 开始
+op=>operation: 操作
+cond=>condition: 条件判断
+e=>end: 结束
+
+b->cond
+cond(yes)->op->e
+cond(no)->e
+```
+
+```c++
+//判断偶数
+int num=12;
+if(num%2==0){
+    printf("%d是个偶数",num);
+}
+```
+
+### 6.2 if-else语句
+
+```c++
+if(条件判断){
+   //条件判断为真
+   语句1;
+}else{
+   //条件判断为假
+   语句2;
+}
+```
+
+```flow
+start=>start: 开始
+cond=>condition: 条件判断
+op1=>operation: 语句1
+op2=>operation: 语句2
+e=>end
+
+start->cond->e
+cond(yes)->op1->e
+cond(no)->op2->e
+```
+
+```c++
+//根据判断某年是不是闰年，分别输出XX年是闰年，XX年不是闰年。
+if(year%4==0&&year%100!=0||year%400==0)
+    printf("%d年是闰年");
+else
+    printf("%d年不是闰年");
+```
+
+### 6.3 条件表达式:star:
+
+```c++
+/*
+c++里提供了if-else的替代形式，条件运算符
+格式如下：(条件判断)?表达式1:表达式2;
+执行流程：
+	先进行条件判断：条件为真，执行表达式1
+	             条件为假，执行表达式2
+*/
+(year%4==0&&year%100!=0||year%400==0)?printf("%d年是闰年"):printf("%d年不是闰年");
+
+//使用条件表达式的值
+//判断数字大小,if-else语句
+ if(a > b){
+     max = a;
+ }else{
+     max = b;
+ }
+//判断数字大小，条件表达式
+max=(a>b)?a:b;
+
+//输入一个字符，判别它是否为大写字母，如果是，将它转换成小写字母；如果不是，不转换。
+ch=(ch>='A' && ch<='Z')?(ch+32):ch;  //判别ch是否大写字母，是则转换
+
+//条件运算符自右向左结合
+a?b:c?d:e;
+//等同于
+a?b:(c?d:e);
+```
+
+### 6.4 if-else if语句
+
+```c++
+//if-else if语句用来实现多分支
+if(表达式1){
+      执行代码块1；
+}else if(表达式2){
+      执行代码块2；
+}else if(表达式3){
+      执行代码块3；
+}
+……
+else{
+      执行代码块n;
+}
+```
+
+```flow
+start=>start: 开始
+cond1=>condition: 表达式1
+cond2=>condition: 表达式2
+cond3=>condition: 表达式3
+op1=>operation: 代码块1
+op2=>operation: 代码块2
+op3=>operation: 代码块3
+op4=>operation: 代码块n
+e=>end: 结束
+
+start->cond1->e
+cond1(yes)->op1->e
+cond1(no)->cond2(yes)->op2->e
+cond2(no)->cond3(yes)->op3->e
+cond3(no)->op4->e
+```
+
+```c++
+/**
+小玉家的电费
+	月用电量在150千瓦时及以下部分按每千瓦时0.4463元执行
+	月用电量在151~400千瓦时的部分按每千瓦时0.4663元执行
+	月用电量在401千瓦时及以上部分按每千瓦时0.5663元执行
+	
+根据题意模拟，分成三种情况。
+	a<=150
+	a>=151 && a<=400
+	其他情况
+*/
+double a;//计算开double
+scanf("%lf",&a);//输入,注意double型用%lf
+if (a<=150){//判断即可
+    printf("%.1lf",a*0.4463);
+}
+else if (a>=151 && a<=400){
+    printf("%.1lf",150*0.4463+(a-150)*0.4663);
+}
+else {
+    printf("%.1lf",150*0.4463+250*0.4663+(a-400)*0.5663);
+}
+```
+
+### 6.5 switch语句
+
+```c++
+/*
+输入成绩判断等级，分别为优秀、良好、中等、及格、不及格，其他情况输出“输错了”
+*/
 int s;
 cin>>s;
 switch(s/10){
@@ -380,5 +538,3 @@ switch(s/10){
         cout<<"输错了";
 }
 ```
-
-[]()
