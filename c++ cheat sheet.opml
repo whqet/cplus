@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title></title>
+    <dateModified></dateModified>
+    <ownerName></ownerName>
+  </head>
+  <body>
+<outline text="c++知识总结" _note="C++简明教程，可以用来复习知识点、巩固基础知识、备忘提示等作用。">
+  <outline text="&lt;a href=&quot;&quot;&gt;目录&lt;/a&gt;">
+  </outline>
+  <outline text="1. c++程序结构" _note="    #include &lt;iostream&gt;&#10;    using namespace std;&#10;    int main(){&#10;        //你的代码放在这里&#10;        return 0;&#10;    }&#10;&#10;按照惯例，用helloworld开启我们的c++之旅。&#10;&#10;    //包含头文件&#10;    #include &lt;iostream&gt;&#10;    //使用std命名空间，&#10;    using namespace std;&#10;    //程序开始的地方，main函数主函数&#10;    int main(){&#10;        &#10;        //输出Hello World&#10;        cout&lt;&lt;&quot;Hello World&quot;;&#10;&#10;        //返回0&#10;        return 0;&#10;    }">
+  </outline>
+  <outline text="2. 注释的使用" _note="    /*&#10;    	c++ 支持两种格式的注释&#10;    		多行注释&#10;    		单行注释&#10;    */&#10;    // 这个是单行注释">
+  </outline>
+  <outline text="3. 标准输入和输出" _note="&gt; cin和cout定义在iostream头文件中，iostream 是 Input Output Stream&#10;&gt; 的缩写，意思是“输入输出流”。">
+    <outline text="3.1 &lt;code&gt;cin&lt;/code&gt;输入" _note="    int a,b;&#10;    //cin与流提取运算符 &gt;&gt; 配合使用&#10;    //获取用户输入的值&#10;    cin&gt;&gt;a;&#10;    //也可以一次输入多个数，中间用空格隔开，或者每行一个数&#10;    cin&gt;&gt;a&gt;&gt;b;">
+    </outline>
+    <outline text="3.2 &lt;code&gt;cout&lt;/code&gt;输出" _note="    //cout与流插入运算符 &lt;&lt; 结合使用&#10;    cout&lt;&lt;a;&#10;    //也可以直接输出多个内容&#10;    //endl(end of line) 一行输出结束，输出下一行&#10;    cout&lt;&lt;&quot;结果是：&quot;&lt;&lt;a&lt;&lt;endl;&#10;&#10;    //输出格式设置&#10;    int n = 141;&#10;    //1) 分别以十六进制、十进制、八进制先后输出 n&#10;    cout &lt;&lt; &quot;1)&quot; &lt;&lt; hex &lt;&lt; n &lt;&lt; &quot; &quot; &lt;&lt; dec &lt;&lt; n &lt;&lt; &quot; &quot; &lt;&lt; oct &lt;&lt; n &lt;&lt; endl;&#10;    double x = 1234567.89, y = 12.34567;&#10;    //2)保留5位有效数字&#10;    cout &lt;&lt; &quot;2)&quot; &lt;&lt; setprecision(5) &lt;&lt; x &lt;&lt; &quot; &quot; &lt;&lt; y &lt;&lt; &quot; &quot; &lt;&lt; endl;&#10;    //3)保留小数点后面5位&#10;    cout &lt;&lt; &quot;3)&quot; &lt;&lt; fixed &lt;&lt; setprecision(5) &lt;&lt; x &lt;&lt; &quot; &quot; &lt;&lt; y &lt;&lt; endl;&#10;    //4)科学计数法输出，且保留小数点后面5位&#10;    cout &lt;&lt; &quot;4)&quot; &lt;&lt; scientific &lt;&lt; setprecision(5) &lt;&lt; x &lt;&lt; &quot; &quot; &lt;&lt; y &lt;&lt; endl;&#10;    //5)非负数显示正号，输出宽度为12字符，宽度不足则用 * 填补&#10;    cout &lt;&lt; &quot;5)&quot; &lt;&lt; showpos &lt;&lt; fixed &lt;&lt; setw(12) &lt;&lt; setfill('*') &lt;&lt; 12.1 &lt;&lt; endl;&#10;    //6)非负数不显示正号，输出宽度为12字符，宽度不足则右边用填充字符填充&#10;    cout &lt;&lt; &quot;6)&quot; &lt;&lt; noshowpos &lt;&lt; setw(12) &lt;&lt; left &lt;&lt; 12.1 &lt;&lt; endl;&#10;    //7)输出宽度为 12 字符，宽度不足则左边用填充字符填充&#10;    cout &lt;&lt; &quot;7)&quot; &lt;&lt; setw(12) &lt;&lt; right &lt;&lt; 12.1 &lt;&lt; endl;&#10;    //8)宽度不足时，负号和数值分列左右，中间用填充字符填充&#10;    cout &lt;&lt; &quot;8)&quot; &lt;&lt; setw(12) &lt;&lt; internal &lt;&lt; -12.1 &lt;&lt; endl;&#10;    cout &lt;&lt; &quot;9)&quot; &lt;&lt; 12.1 &lt;&lt; endl;">
+    </outline>
+  </outline>
+  <outline text="3. 数据类型" _note="[TABLE]">
+    <outline text="3.1 布尔型" _note="    //布尔型（bool 类型）&#10;    //bool类型只有两个取值，true和false, true表示“真”,false表示“假”。&#10;    //一般用在条件判断上，例如if语句、switch语句、while语句等&#10;    bool flag=true;&#10;    cout&lt;&lt;flag;  //输出1&#10;&#10;    //如果需要输出true或false，需要进行转化&#10;    cout&lt;&lt;(flag?&quot;true&quot;:&quot;false&quot;);">
+    </outline>
+    <outline text="3.2 整型" _note="[TABLE]&#10;&#10;    //数值类型的极值与平台相关，不同平台可能不一样&#10;    //获取int类型所占字节数，最大值和最小值&#10;    //需要引入limits头文件，#include &lt;limits&gt;&#10;    cout &lt;&lt; &quot;int数据类型 \n&quot; &lt;&lt; &quot;所占字节数：\t&quot; &lt;&lt; sizeof(short);&#10;    cout &lt;&lt; &quot;\n最大值：\t&quot; &lt;&lt; (numeric_limits&lt;short&gt;::max)();&#10;    cout &lt;&lt; &quot;\n最小值：\t&quot; &lt;&lt; (numeric_limits&lt;short&gt;::min)() &lt;&lt; endl;&#10;&#10;    //整型运算时需要注意&#10;    cout&lt;&lt;5/9;		//0&#10;    cout&lt;&lt;5.0/9;	//0.555556">
+    </outline>
+    <outline text="3.3 浮点型" _note="[TABLE]&#10;&#10;    //浮点型">
+    </outline>
+    <outline text="3.4 字符型" _note="字符型只能存储一个字符，在计算机中以数字形式存储。&#10;&#10;[TABLE]&#10;&#10;    //字符型&#10;    char a='a';&#10;    cout&lt;&lt;a&lt;&lt;endl;   			//输出a&#10;    cout&lt;&lt;a-32&lt;&lt;endl; 			//输出65，字符型参加数学运算自动转换为数字型&#10;    cout&lt;&lt;char(a-32)&lt;&lt;endl; 	//输出A &#10;&#10;    //如果是小写字母则转换为大写字母&#10;    char b;&#10;    cin&gt;&gt;b;&#10;    b=(b&gt;='a'&amp;&amp;b&lt;='z')?b-32:b;&#10;    cout&lt;&lt;b;">
+    </outline>
+  </outline>
+  <outline text="4. 变量和常量">
+    <outline text="4.1 变量" _note="-   变量是存放数据的容器。&#10;&#10;-   变量定义&#10;&#10;    -   必须先定义再使用。&#10;&#10;    -   变量定义时，系统会根据变量类型给变量开辟空间来存储数据。&#10;&#10;&amp;nbsp;&#10;&#10;    //定义变量&#10;    //语法：数据类型 变量名;&#10;    int a;&#10;&#10;    //定义变量的时候赋值&#10;    float b=3.0;&#10;&#10;    //同时定义多个变量，但是只能同时定义同一种数据类型&#10;    double c,d=2.12;&#10;    bool flag;&#10;    char a;&#10;&#10;[TABLE]&#10;&#10;    /*&#10;    	变量：全局变量和局部变量&#10;    */&#10;&#10;    //1.全局变量&#10;    #include &lt;iostream&gt;&#10;    using namespace std;&#10;    //全局变量声明&#10;    int studentId=1;&#10;    int main(){&#10;    	cout&lt;&lt;&quot;全局变量在全局范围内有效：&quot;&lt;&lt;studentId;&#10;    	return 0;&#10;    }&#10;&#10;    //2.局部变量&#10;    #include &lt;iostream&gt;&#10;    using namespace std;&#10;    int main(){&#10;    	//局部变量声明&#10;    	int studentId=1;&#10;    	cout&lt;&lt;&quot;局部变量在局部范围内有效：&quot;&lt;&lt;studentId;	&#10;    	return 0;&#10;    }">
+    </outline>
+    <outline text="4.2 常量" _note="-   常量就像是常规的变量，只不过常量的值在定义后不能进行修改。&#10;&#10;-   常量可以是任何的基本数据类型，整型、浮点型、字符、字符串和布尔值。">
+      <outline text="定义常量" _note="    /*&#10;    	定义常量&#10;    		1. 使用#define 预处理器&#10;    		2. 使用const关键字&#10;    */&#10;&#10;    //1. 使用#define 预处理器&#10;    #include &lt;iostream&gt;&#10;    using namespace std;&#10;    //定义常量 &#10;    #define PI 3.1415926 &#10;    int main(){&#10;    	float r,s;&#10;    	cin&gt;&gt;r;&#10;    	s=PI*r*r;&#10;    	cout&lt;&lt;s;&#10;    	return 0;&#10;    }&#10;&#10;    //2. 使用const关键字&#10;    const PI=3.1415926; ">
+      </outline>
+    </outline>
+  </outline>
+  <outline text="5. scanf和printf输入和输出">
+    <outline text="5.1 &lt;code&gt;scanf&lt;/code&gt;使用" _note="    //--scanf(&quot;输入控制符&quot;, 输入参数);&#10;    //%d 输入控制符，表示输入一个整数&#10;    //&amp;i 表示变量 i 的地址，&amp;是取地址符&#10;    scanf(&quot;%d&quot;, &amp;i);  &#10;&#10;    //--scanf(&quot;非输入控制符+输入控制符&quot;, 输入参数);&#10;    //尽量不用非输入控制符，因为所有的非输入控制符都要“原样输入”&#10;    scanf(&quot;i = %d&quot;, &amp;i);&#10;&#10;    //--当然，也可以一次输入多个变量&#10;    scanf(&quot;%d%c&quot;,&amp;a,&amp;b);&#10;&#10;-   注意事项&#10;&#10;    -   参数的个数一定要对应&#10;&#10;    -   输入的数据类型一定要与所需要的数据类型一致&#10;&#10;    -   在使用 scanf 之前最好使用 printf 提示输入">
+    </outline>
+    <outline text="5.2 &lt;code&gt;printf&lt;/code&gt;使用⭐️" _note="    /*&#10;    printf 几种使用方式&#10;    	直接输出字符串&#10;    	输出变量&#10;    	输出多个变量&#10;    	混合输出字符串和变量&#10;    */&#10;    //1. 输出字符串&#10;    //printf(&quot;字符串\n&quot;);&#10;    //\n是转义符，代表换行输出，建议使用以提高用户输入体验&#10;    printf(&quot;Hello World!\n&quot;);&#10;&#10;    //2. 输出变量&#10;    //printf(&quot;输出控制符&quot;，输出参数);&#10;    printf(&quot;%d\n&quot;, i);&#10;&#10;    //3. 输出多个变量&#10;    //printf(&quot;输出控制符1 输出控制符2&quot;，输出参数1，输出参数2);&#10;    //printf是原样输出&#10;    printf(&quot;%d %d\n&quot;, i, j);&#10;    printf(&quot;i = %d, j = %d\n&quot;, i, j);&#10;&#10;    //4. 混合输出字符串和变量&#10;    //根据编程需要或题目需求进行输出&#10;    //例如，要求输出&quot;2018年不是闰年！&quot;,只需要原样复制到printf的头一个参数里，然后替换变量就行了。&#10;    printf(&quot;%d年不是闰年！&quot;,year);">
+    </outline>
+    <outline text="5.3 格式控制字符串详解" _note="    %[flags][width][.prec][length]type&#10;    //参数翻译成中文&#10;    %[标志][最小宽度][.精度][类型长度]类型&#10;&#10;    //type 类型，唯一的必选参数&#10;    printf(&quot;%d&quot;,a);&#10;&#10;    //width 最小宽度，可选&#10;    printf(&quot;%10d&quot;,a);&#10;    //如果实际位数超过指定宽度，按实际位数输出&#10;    //如果实际位数少于指定宽度，则补空格或补零输出&#10;    printf(&quot;%6d&quot;,1000);	//输出:  1000&#10;    printf(&quot;%06d&quot;,1000);//输出:001000&#10;&#10;    //.prec 精度，可选&#10;    printf(&quot;%.3f&quot;,12.3456);  //输出12.346&#10;&#10;    //flag 标志，可选&#10;    printf(&quot;%5d %-5d\n&quot;,100,100);       //默认右对齐，使用-左对齐,右边补空格&#10;    printf(&quot;%+d %+d\n&quot;,1000,-1000);     //输出正负号&#10;    printf(&quot;% d % d\n&quot;,1000,-1000);     //正号用空格替代，负号输出&#10;    printf(&quot;%x %#x %o %#o\n&quot;,25,25,25,25);  //十六进制、八进制输出，加#可以输出进制前缀&#10;    printf(&quot;%05d\n&quot;,100);               //加0，位数不足时补零&#10;&#10;    //length 类型长度，可选，指明统一数据类型的不同长度">
+      <outline text="类型字符" _note="[TABLE]">
+      </outline>
+    </outline>
+  </outline>
+  <outline text="6 判断">
+    <outline text="6.1 if语句 ⭐️" _note="    //if语句&#10;    //如果执行的操作只有一句，则&#10;    if(条件判断) 操作;&#10;    //一般情况下，需要执行的语句换行，tab缩进比较美观。&#10;    if(条件判断)&#10;        操作;&#10;    //如果包括多个语句，需要加上大括号&#10;    if(条件判断){&#10;        多个语句;&#10;    }&#10;&#10;    b=&gt;start: 开始&#10;    op=&gt;operation: 操作&#10;    cond=&gt;condition: 条件判断&#10;    e=&gt;end: 结束&#10;&#10;    b-&gt;cond&#10;    cond(yes)-&gt;op-&gt;e&#10;    cond(no)-&gt;e&#10;&#10;    //判断偶数&#10;    int num=12;&#10;    if(num%2==0){&#10;        printf(&quot;%d是个偶数&quot;,num);&#10;    }">
+    </outline>
+    <outline text="6.2 if-else语句" _note="    if(条件判断){&#10;       //条件判断为真&#10;       语句1;&#10;    }else{&#10;       //条件判断为假&#10;       语句2;&#10;    }&#10;&#10;    start=&gt;start: 开始&#10;    cond=&gt;condition: 条件判断&#10;    op1=&gt;operation: 语句1&#10;    op2=&gt;operation: 语句2&#10;    e=&gt;end&#10;&#10;    start-&gt;cond-&gt;e&#10;    cond(yes)-&gt;op1-&gt;e&#10;    cond(no)-&gt;op2-&gt;e&#10;&#10;    //根据判断某年是不是闰年，分别输出XX年是闰年，XX年不是闰年。&#10;    if(year%4==0&amp;&amp;year%100!=0||year%400==0)&#10;        printf(&quot;%d年是闰年&quot;);&#10;    else&#10;        printf(&quot;%d年不是闰年&quot;);">
+    </outline>
+    <outline text="6.3 条件表达式⭐️" _note="    /*&#10;    c++里提供了if-else的替代形式，条件运算符&#10;    格式如下：(条件判断)?表达式1:表达式2;&#10;    执行流程：&#10;    	先进行条件判断：条件为真，执行表达式1&#10;    	             条件为假，执行表达式2&#10;    */&#10;    (year%4==0&amp;&amp;year%100!=0||year%400==0)?printf(&quot;%d年是闰年&quot;):printf(&quot;%d年不是闰年&quot;);&#10;&#10;    //使用条件表达式的值&#10;    //判断数字大小,if-else语句&#10;     if(a &gt; b){&#10;         max = a;&#10;     }else{&#10;         max = b;&#10;     }&#10;    //判断数字大小，条件表达式&#10;    max=(a&gt;b)?a:b;&#10;&#10;    //输入一个字符，判别它是否为大写字母，如果是，将它转换成小写字母；如果不是，不转换。&#10;    ch=(ch&gt;='A' &amp;&amp; ch&lt;='Z')?(ch+32):ch;  //判别ch是否大写字母，是则转换&#10;&#10;    //条件运算符自右向左结合&#10;    a?b:c?d:e;&#10;    //等同于&#10;    a?b:(c?d:e);">
+    </outline>
+    <outline text="6.4 if-else if语句" _note="    //if-else if语句用来实现多分支&#10;    if(表达式1){&#10;          执行代码块1；&#10;    }else if(表达式2){&#10;          执行代码块2；&#10;    }else if(表达式3){&#10;          执行代码块3；&#10;    }&#10;    ……&#10;    else{&#10;          执行代码块n;&#10;    }&#10;&#10;    start=&gt;start: 开始&#10;    cond1=&gt;condition: 表达式1&#10;    cond2=&gt;condition: 表达式2&#10;    cond3=&gt;condition: 表达式3&#10;    op1=&gt;operation: 代码块1&#10;    op2=&gt;operation: 代码块2&#10;    op3=&gt;operation: 代码块3&#10;    op4=&gt;operation: 代码块n&#10;    e=&gt;end: 结束&#10;&#10;    start-&gt;cond1-&gt;e&#10;    cond1(yes)-&gt;op1-&gt;e&#10;    cond1(no)-&gt;cond2(yes)-&gt;op2-&gt;e&#10;    cond2(no)-&gt;cond3(yes)-&gt;op3-&gt;e&#10;    cond3(no)-&gt;op4-&gt;e&#10;&#10;    /**&#10;    小玉家的电费&#10;    	月用电量在150千瓦时及以下部分按每千瓦时0.4463元执行&#10;    	月用电量在151~400千瓦时的部分按每千瓦时0.4663元执行&#10;    	月用电量在401千瓦时及以上部分按每千瓦时0.5663元执行&#10;    	&#10;    根据题意模拟，分成三种情况。&#10;    	a&lt;=150&#10;    	a&gt;=151 &amp;&amp; a&lt;=400&#10;    	其他情况&#10;    */&#10;    double a;//计算开double&#10;    scanf(&quot;%lf&quot;,&amp;a);//输入,注意double型用%lf&#10;    if (a&lt;=150){//判断即可&#10;        printf(&quot;%.1lf&quot;,a*0.4463);&#10;    }&#10;    else if (a&gt;=151 &amp;&amp; a&lt;=400){&#10;        printf(&quot;%.1lf&quot;,150*0.4463+(a-150)*0.4663);&#10;    }&#10;    else {&#10;        printf(&quot;%.1lf&quot;,150*0.4463+250*0.4663+(a-400)*0.5663);&#10;    }">
+    </outline>
+    <outline text="6.5 switch语句" _note="    /*&#10;    输入成绩判断等级，分别为优秀、良好、中等、及格、不及格，其他情况输出“输错了”&#10;    */&#10;    int s;&#10;    cin&gt;&gt;s;&#10;    switch(s/10){&#10;        case 10:&#10;        case 9:&#10;            cout&lt;&lt;&quot;优秀&quot;;&#10;            break;&#10;        case 8:&#10;            cout&lt;&lt;&quot;良好&quot;;&#10;            break;&#10;        case 7:&#10;            cout&lt;&lt;&quot;中等&quot;;&#10;            break;&#10;        case 6:&#10;            cout&lt;&lt;&quot;及格&quot;;&#10;            break;&#10;        case 5:&#10;        case 4:&#10;        case 3:&#10;        case 2:&#10;        case 1:&#10;        case 0:&#10;            cout&lt;&lt;&quot;不及格&quot;;&#10;            break;&#10;        default:&#10;            cout&lt;&lt;&quot;输错了&quot;;&#10;    }">
+    </outline>
+  </outline>
+</outline>
+  </body>
+</opml>

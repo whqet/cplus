@@ -27,7 +27,7 @@ int main(){
     
     //输出Hello World
     cout<<"Hello World";
-   
+
     //返回0
     return 0;
 }
@@ -66,6 +66,27 @@ cout<<a;
 //也可以直接输出多个内容
 //endl(end of line) 一行输出结束，输出下一行
 cout<<"结果是："<<a<<endl;
+
+//输出格式设置
+int n = 141;
+//1) 分别以十六进制、十进制、八进制先后输出 n
+cout << "1)" << hex << n << " " << dec << n << " " << oct << n << endl;
+double x = 1234567.89, y = 12.34567;
+//2)保留5位有效数字
+cout << "2)" << setprecision(5) << x << " " << y << " " << endl;
+//3)保留小数点后面5位
+cout << "3)" << fixed << setprecision(5) << x << " " << y << endl;
+//4)科学计数法输出，且保留小数点后面5位
+cout << "4)" << scientific << setprecision(5) << x << " " << y << endl;
+//5)非负数显示正号，输出宽度为12字符，宽度不足则用 * 填补
+cout << "5)" << showpos << fixed << setw(12) << setfill('*') << 12.1 << endl;
+//6)非负数不显示正号，输出宽度为12字符，宽度不足则右边用填充字符填充
+cout << "6)" << noshowpos << setw(12) << left << 12.1 << endl;
+//7)输出宽度为 12 字符，宽度不足则左边用填充字符填充
+cout << "7)" << setw(12) << right << 12.1 << endl;
+//8)宽度不足时，负号和数值分列左右，中间用填充字符填充
+cout << "8)" << setw(12) << internal << -12.1 << endl;
+cout << "9)" << 12.1 << endl;
 ```
 
 ## 3. 数据类型
@@ -345,7 +366,7 @@ printf("%05d\n",100);               //加0，位数不足时补零
 |%x |十六进制数(0x00000)|
 |%s |字符串|
 
-## 6 判断
+## 6. 判断
 
 ### 6.1 if语句 :star:
 
@@ -504,7 +525,23 @@ else {
 }
 ```
 
-### 6.5 switch语句
+### 6.5 switch语句:star:
+
+```c++
+switch (表达式){
+    case 常量表达式1：    语句1
+    case 常量表达式2：    语句2
+       ┇
+    case 常量表达式n：    语句n
+    default:            语句n+1
+}
+```
+
+- 注意事项
+  -  switch 后面括号内的“表达式”必须是整数类型(数值或表达式，int型或char型)。
+  -  switch 下的 case 和 default 必须用一对大括号`{}`括起来。
+  - 每个 case 后面“常量表达式”的值必须互不相同。
+  - break不能漏掉。
 
 ```c++
 /*
@@ -538,3 +575,46 @@ switch(s/10){
         cout<<"输错了";
 }
 ```
+
+## 7. 循环
+
+### 7.1 while循环:star:
+
+```c++
+//只要给定的条件为真，while 循环语句会重复执行一个目标语句。
+//while语句适合循环次数未知的循环
+while(循环条件) 
+    循环语句;
+
+//循环体有多个语句需要加{}
+while(循环条件){
+	循环语句1;
+	循环语句2;
+}
+```
+
+```flow
+start=>start: 开始操作
+cond=>condition: 循环条件
+op1=>operation: 循环体（可能多个语句）
+end=>end: 后续操作
+
+start->cond
+cond(yes, bottom)->op1(left)->cond
+cond(no, bottom)->end
+```
+
+- 注意事项
+  - 循环体包含多个语句，应该用花括号括起来，以复合语句形式出现。
+  -  在循环体中应有使循环趋向于结束的语句。
+  -  千万避免死循环的发生。
+
+```c++
+//while语句
+
+```
+
+
+
+
+
